@@ -1,0 +1,36 @@
+{
+  "name": "@verdictx/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src/server.ts --format esm",
+    "lint": "eslint .",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@verdictx/shared": "workspace:*",
+    "argon2": "^0.44.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.19.0",
+    "multer": "^2.0.2",
+    "pino": "^10.0.0",
+    "pino-http": "^11.0.0",
+    "socket.io": "^4.8.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.3.1",
+    "@verdictx/eslint-config": "workspace:*",
+    "@verdictx/typescript-config": "workspace:*",
+    "eslint": "^9.35.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.5"
+  }
+}

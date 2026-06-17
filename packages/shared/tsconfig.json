@@ -1,0 +1,4 @@
+{
+  "extends": "@verdictx/typescript-config/node.json",
+  "include": ["src"]
+}
