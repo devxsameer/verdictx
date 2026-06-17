@@ -2,6 +2,8 @@
   "name": "@verdictx/api",
   "private": true,
   "type": "module",
+  "author": "Sameer Ali",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src/server.ts --format esm",
@@ -29,7 +31,6 @@
     "@types/node": "^24.3.1",
     "@verdictx/eslint-config": "workspace:*",
     "@verdictx/typescript-config": "workspace:*",
-    "eslint": "^9.35.0",
     "tsup": "^8.5.0",
     "tsx": "^4.20.5"
   }

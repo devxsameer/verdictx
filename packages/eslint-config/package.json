@@ -4,13 +4,11 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./base": "./base.js",
-    "./react": "./react.js",
-    "./node": "./node.js"
+    "./node": "./node.ts",
+    "./react": "./react.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-only-warn": "^1.2.1",
     "eslint-plugin-turbo": "^2.9.18",

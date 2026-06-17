@@ -1,6 +1,9 @@
 {
   "extends": "@verdictx/typescript-config/node.json",
   "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+
     "paths": {
       "@/*": ["./src/*"]
     }

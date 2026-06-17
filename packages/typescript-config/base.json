@@ -2,10 +2,11 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
 
     "strict": true,
+    "noImplicitAny": true,
 
     "skipLibCheck": true,
 
@@ -20,6 +21,7 @@
 
     "noUncheckedIndexedAccess": true,
 
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "forceConsistentCasingInFileNames": true
   }
 }
