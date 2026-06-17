@@ -1,0 +1,11 @@
+import z from 'zod';
+
+const envSchema = z.object({
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
+  PORT: z.string().default('2000'),
+//   DATABASE_URL: z.url(),
+  ACCESS_TOKEN_SECRET: z.string(),
+  REFRESH_TOKEN_SECRET: z.string(),
+});
+
+export const env = envSchema.parse(process.env);
