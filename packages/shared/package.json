@@ -12,6 +12,8 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@verdictx/typescript-config": "workspace:*",
+    "mongodb": "^6.21.0",
     "zod": "^4.1.5"
   }
 }
