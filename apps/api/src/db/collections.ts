@@ -1,9 +1,10 @@
+import { RefreshToken, User } from '@verdictx/shared/types';
 import { getDb } from './mongodb.js';
 
 export const collections = {
-  users: () => getDb().collection('users'),
+  users: () => getDb().collection<User>('users'),
 
-  refreshTokens: () => getDb().collection('refresh_tokens'),
+  refreshTokens: () => getDb().collection<RefreshToken>('refresh_tokens'),
 
   resumes: () => getDb().collection('resumes'),
 

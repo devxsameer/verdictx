@@ -1,6 +1,7 @@
 // src/app.ts
 import express, { NextFunction, Request, Response, Express } from 'express';
 import { env } from './config/env.js';
+import '@/config/passport.js';
 
 import { globalErrorHandler } from './middlewares/error.middleware.js';
 // import { httpLogger, requestId } from './middlewares/logger.middleware.js';
@@ -15,8 +16,9 @@ import { globalErrorHandler } from './middlewares/error.middleware.js';
 // import dashboardRoutes from './modules/dashboard/dashboard.routes.js';
 
 import { NotFoundError } from './errors/http.errors.js';
+import authRouter from './modules/auth/auth.routes.js';
 // import { swaggerHandler, swaggerMiddleware } from './docs/swagger.js';
-// import cookieParser from 'cookie-parser';
+import cookieParser from 'cookie-parser';
 // import userRoutes from './modules/user/user.routes.js';
 
 const app: Express = express();
@@ -34,7 +36,7 @@ app.disable('x-powered-by');
 /* -------------------- CORE MIDDLEWARE -------------------- */
 // app.use(requestId);
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 // app.use(httpLogger);
 
 /* -------------------- HEALTH CHECK -------------------- */
@@ -48,7 +50,7 @@ app.get('/health', (req: Request, res: Response) => {
 });
 
 /* -------------------- ROUTES -------------------- */
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRouter);
 // app.use('/api/users', userRoutes);
 // app.use('/api/posts', postRoutes);
 // app.use('/api/tags', tagRoutes);
