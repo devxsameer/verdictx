@@ -19,6 +19,7 @@ import { NotFoundError } from './errors/http.errors.js';
 import authRouter from './modules/auth/auth.routes.js';
 // import { swaggerHandler, swaggerMiddleware } from './docs/swagger.js';
 import cookieParser from 'cookie-parser';
+import { corsMiddleware } from './middlewares/cors.middleware.js';
 // import userRoutes from './modules/user/user.routes.js';
 
 const app: Express = express();
@@ -30,8 +31,8 @@ app.disable('x-powered-by');
 // app.use(securityMiddleware);
 
 /* ------------------------ CORS ----------------------- */
-// app.use(corsMiddleware);
-// app.options('{*path}', corsMiddleware);
+app.use(corsMiddleware);
+app.options('{*path}', corsMiddleware);
 
 /* -------------------- CORE MIDDLEWARE -------------------- */
 // app.use(requestId);
